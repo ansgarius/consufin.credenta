@@ -1,0 +1,10 @@
+<div   >
+  <!--Contenedor para mostrar los errores-->
+
+
+  <ul class="list-group" *ngFor="let err of errorMensaje| keyvalue">
+    <li class="list-group-item list-group-item-danger" style="
+font-family:BeaufortMediumItalic;">{{err.value}}</li>
+  </ul>
+  <!--Muestra el error enviado por el servidor-->
+</div>

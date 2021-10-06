@@ -1,0 +1,27 @@
+ <div class="d-flex justify-content-between  col-12  content">
+   <a class="navbar-brand" [routerLink]="['/home']">
+     <img src="assets/logo-gray.svg" class="logo" >
+   </a>
+   <nav class="navbar navbar-expand-lg navbar-light d-flex flex-row-reverse menu" >
+     <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav">
+         <li class="nav-item " style="">
+           <button type="button" name="button" class="bg-white btn  "  [routerLink]='"."' fragment="nosotros">NOSOTROS</button>
+           <!--<button type="button" name="button" class="bg-white btn " [routerLink]="['/nosotros']">NOSOTROS</button>-->
+         </li>
+         <li class="nav-item">
+          <!-- <button type="button" name="button" class="bg-white btn " style="" [routerLink]="['/servicio']">SERVICIO</button>-->
+           <button type="button" name="button" class="bg-white btn  "  [routerLink]='"."' fragment="servicio">SERVICIO</button>
+         </li>
+         <li class="nav-item">
+           <!--<button type="button" name="button" class="bg-white btn  " style=" " [routerLink]="['/contacto']">CONTACTO</button>-->
+           <button type="button" name="button" class="bg-white btn  "  [routerLink]='"."' fragment="contact">CONTACTO</button>
+         </li>
+       </ul>
+     </div>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" (click)="open_menu()"
+     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+   </nav>
+ </div>

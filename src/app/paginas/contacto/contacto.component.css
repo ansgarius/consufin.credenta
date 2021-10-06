@@ -1,0 +1,200 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.lista-item a {
+  font-family: BeaufortMediumItalic;
+  color: white;
+  font-size: 18px;
+}
+
+.content {
+  background: var(--color-green);
+}
+
+
+@media (max-width:576px) {
+  .parrafo1 {
+    height: 17vh;
+  }
+
+  .logo {
+    width: 200px;
+  }
+
+  .lista-title p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 18px;
+    padding: 0% 5% 30% 5%;
+  }
+
+  .lista .lista-item {
+    padding-bottom: 5%;
+  }
+
+  .lista-item img {
+    margin: 0% 10% 0% 5%;
+    max-width: 25px;
+  }
+
+  .lista-item p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 18px;
+  }
+
+  .lista-item span {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 11px;
+  }
+
+  .lista {
+    padding: 0% 9% 0% 9%;
+  }
+
+  .footer {
+    background: var(--color-green);
+    padding: 9% 2% 20% 2%;
+  }
+
+  .footer a {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 15px;
+  }
+
+  .footer .links {
+    padding: 7% 0%;
+  }
+
+  .footer .icons {
+    height: 25px;
+    margin: 0% 5%;
+  }
+}
+
+@media (min-width:576px) {
+  .parrafo1 {
+    height: 17vh;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  .lista-title p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 28px;
+    padding: 0% 5% 30% 5%;
+  }
+
+  .lista .lista-item {
+    padding-bottom: 5%;
+  }
+
+  .lista-item img {
+    margin: 0% 10% 0% 5%;
+    max-width: 45px;
+  }
+
+  .lista-item p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 28px;
+  }
+
+  .lista-item span {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 21px;
+  }
+
+  .lista {
+    padding: 0% 9% 0% 9%;
+  }
+
+  .footer {
+    background: var(--color-green);
+    padding: 9% 2% 10% 2%;
+  }
+
+  .footer a {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 25px;
+  }
+
+  .footer .links {
+    padding: 4% 0%;
+  }
+
+  .footer .icons {
+    height: 45px;
+    margin: 0% 5%;
+  }
+}
+/*medium*/
+@media (min-width:768px) {
+  .parrafo1 {
+    height: 63vh;
+  }
+
+  .logo {
+    width: 300px;
+  }
+  .lista {
+    padding: 0% 16% 0% 0%;
+  }
+  .lista-title p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 28px;
+    padding: 0% 5% 30% 5%;
+  }
+
+  .lista .lista-item {
+    padding-bottom: 5%;
+  }
+
+  .lista-item img {
+    margin: 0% 10% 0% 5%;
+    max-width: 35px;
+  }
+
+  .lista-item p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 18px;
+  }
+
+  .lista-item span {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 16px;
+  }
+
+  .footer {
+    background: var(--color-green);
+    padding: 6% 2% 10% 2%;
+  }
+
+  .footer {
+    background: var(--color-green);
+    padding: 2% 2% 5% 2%;
+  }
+
+  .footer a {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 15px;
+  }
+
+  .footer .icons {
+    height: 35px;
+    margin: 0% 5%;
+  }
+}

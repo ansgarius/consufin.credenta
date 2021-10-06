@@ -1,0 +1,319 @@
+<div class="container-fluid" style=" ">
+  <div class="row">
+    <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12  col-12" style="padding-left:10%; font-size:14px; ">
+
+      <br>
+      <div class="section-title">
+
+        <h2>¡Te damos la bienvenida!</h2>
+        <h3>Realiza tu <span><b>Regístro</b> </span></h3>
+
+      </div>
+      <div *ngIf="!forma.controls['latitud'].valid">
+        <div class="alert alert-warning form-control-feedback" *ngIf="forma.controls['latitud'].errors.required">
+          Por favor permitenos acceder a tu ubicacion.
+        </div>
+      </div>
+      <div class="modal-body" *ngIf="true">
+        <form class="form-horizontal" [formGroup]="forma">
+
+
+
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="input1">Primer nombre</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" maxlength="40" class="form-control" id="input1" formControlName="Nombre1">
+              <div *ngIf="!forma.controls['Nombre1'].valid" class="form-control-feedback text-danger">
+                Primer nombre es requerido
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="input2">Segundo nombre</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" maxlength="40" class="form-control" id="input2" formControlName="Nombre2">
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="input3">Primer apellido</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" maxlength="40" id="input3" formControlName="Apel1">
+              <div *ngIf="!forma.controls['Apel1'].valid" class="form-control-feedback text-danger">
+                Primer apellido es requerido
+              </div>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="input4">Segundo apellido</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" maxlength="40" id="input4" formControlName="Apel2">
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="inputtpersona">Tipo de persona</label>
+            </div>
+            <div class="col-md-6">
+              <select class="custom-select  mb-3" id="inputtpersona" formControlName="Tpersona">
+                <option value="fisica" selected>Fisica</option>
+                <option value="Moral">Moral</option>
+                <option value="fisica_actividad_empresarial">Fisica actividad empresarial</option>
+              </select>
+              <div *ngIf="!forma.controls['Tpersona'].valid" class="form-control-feedback text-danger">
+                Tipo de persona es required
+              </div>
+            </div>
+          </div>
+          <div formArrayName="telefonos">
+            <div class="alert alert-info  " *ngIf="!forma.controls['telefonos'].invalid ">
+              Al guardar sus datos se enviara un clave de verificación a su celular.
+            </div>
+            <div *ngFor="let control of forma.controls['telefonos'].controls; let i=index" formGroupName={{i}}>
+
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label>Telefono </label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" maxlength="10" formControlName="telefono">
+                  <div *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.required ">
+                      Telefono es requerido
+                    </small>
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.pattern ">
+                      Se requiere 10 digitos.
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label>Tipo de telefono </label>
+                </div>
+                <div class="col-md-6">
+                  <select class="custom-select   mb-1 " style="height:50px;" formControlName='telTipo'>
+                    <option selected></option>
+                    <option value="Fijo">Fijo </option>
+                    <option value="Celular">Celular </option>
+                  </select>
+
+                  <div *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].errors.required ">
+                      tipo de telefono es requerido
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+            <br>
+
+          </div>
+
+          <div formArrayName="mails">
+
+
+            <div class="row form-group" *ngFor="let control of forma.controls['mails'].controls; let i=index" formGroupName={{i}}>
+              <div class="col-md-3">
+                <label for="inputmail"> Mail:</label>
+              </div>
+              <div class="col-md-6">
+
+                <input type="email" maxlength="100" class="form-control " id="inputmail" [class.is-invalid]="forma.controls['mails'].controls[i].controls['mail'].invalid " formControlName="mail">
+                <div *ngIf="forma.controls['mails'].controls[i].controls['mail'].invalid">
+                  <small class="text-danger form-control-feedback" *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.required">
+                    Mail es requerido
+                  </small>
+                  <small class="text-danger form-control-feedback" *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.pattern ">
+                    Formato incorrecto.
+                  </small>
+                </div>
+
+
+
+              </div>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+          </div>
+
+
+
+
+
+
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="cotizaMonto">Monto del Crédito:</label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" maxlength="9" class="form-control" id="cotizaMonto" placeholder="0.00" formControlName="monto">
+              <div *ngIf="!forma.controls['monto'].valid" class="form-control-feedback text-danger">
+                Monto es requerido
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="cotizaPeriodo">Plazo: </label>
+            </div>
+            <div class="col-md-6">
+              <select class="custom-select   mb-1 " id="cotizaPeriodo" formControlName='plazo'>
+                <option value="6">6 meses</option>
+                <option value="12">12 meses</option>
+                <option value="18">18 meses</option>
+                <option value="24">24 meses</option>
+              </select>
+
+              <div *ngIf="forma.controls['plazo'].invalid">
+                <small class="text-danger form-control-feedback" *ngIf="forma.controls['plazo'].errors.required ">
+                  El plazo es requerido
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="frecuencaPago">Frecuencia de pago: </label>
+            </div>
+            <div class="col-md-6">
+              <select class="custom-select   mb-1 " id="cotizaPeriodo" formControlName='frecuencaPago'>
+                <option value="mensual">Mensual</option>
+                <option value="quincenal">Quincenal</option>
+                <option value="semanal">Semanal</option>
+              </select>
+
+              <div *ngIf="forma.controls['frecuencaPago'].invalid">
+                <small class="text-danger form-control-feedback" *ngIf="forma.controls['frecuencaPago'].errors.required ">
+                  El plazo es requerido
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row col-md-12 form-check form-check-inline p-4">
+            <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio1" formControlName="garantia_hip">
+            <label class="form-check-label col-md-10 col-10" for="inlineRadio1" style="cursor:pointer;">¿Cuentas con garantía inmobiliaria?</label>
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="dest">Destino del credito</label>
+            </div>
+            <div class="col-md-6">
+              <textarea class="form-control" id="dest" rows="3" formControlName="credito_destino"></textarea>
+              <div *ngIf="!forma.controls['credito_destino'].valid" class="form-control-feedback text-danger">
+                Primer nombre es requerido
+              </div>
+            </div>
+          </div>
+
+
+        <!--  <div class="row col-md-12 form-check form-check-inline p-4">
+            <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio2" formControlName="politicas">
+            <label class="form-check-label col-md-10 col-10" for="inlineRadio2" style="cursor:pointer;">
+              He leído, comprendo y acepto los <a href="#">Terminós y Condiciones Generales</a> y el
+              <a href="#">Aviso de privacidad</a> a través de este medio electrónico.
+
+            </label>
+          </div>-->
+          <br>
+
+
+
+          <div class="row form-group" *ngIf="showForm">
+            <div class="col-md-3">
+              <label>Hemos enviado una Clave de verificación a tu celular favor de ingresarla</label>
+            </div>
+            <div class="col-md-6">
+              <input type="text" placeholder="Ingresé código de Verificación" formControlName="clave" class="form-control">
+              <div *ngIf="forma.controls['clave'].invalid">
+                <small class="text-danger form-control-feedback" *ngIf="forma.controls['clave'].errors.required ">
+                  La clave de verificacion es requerida
+                </small>
+
+              </div>
+              <p class="text-danger form-control-feedback" *ngIf="forma.controls['clave'].value!=telCodeValidation ">
+                La clave de verificacion es incorrecta
+              </p>
+            </div>
+          </div>
+
+
+          <app-error *ngIf="error && !cargando" [errorMensaje]="errorMensaje"></app-error>
+
+          <app-exito *ngIf="success && !cargando" [mensajeExito]="mensajeExito"></app-exito>
+
+
+          <div align="center">
+            <button type="button" class="btn btn-success   " style="cursor:pointer;  font-family:BeaufortMediumItalic;  " *ngIf="forma.valid && !codeSent" (click)="validarTel()">
+              Registrarme
+            </button>
+
+            <!-- -->
+            <button type="button" class="btn btn-success   " style="cursor:pointer;  font-family:BeaufortMediumItalic;  " *ngIf="telCodeValidation===forma.controls['clave'].value && codeSent" (click)="store()">Finalizar</button>
+            <br>
+            <app-spinner *ngIf="cargando"></app-spinner>
+            <!--  <br>
+            <div id="emailHelp" class="form-text">
+              <a [routerLink]="['/solicitud']">
+                <h5 style="font-family:BankGothicBT-Medium;">Solicitar prestamo</h5>
+              </a></div>-->
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+    <div class=" col-xl-6    d-none d-lg-block col-lg-6" style="
+    height: 200vh;
+    background: linear-gradient(rgba(255,255,255,.5),
+    rgba(255,255,255,.5)),
+    url('../../../assets/testimonials-bg.jpg');
+    background-size: cover;
+    position: relative;
+      background-attachment: fixed;
+    ">
+      <!--    <img src="assets/business-861325_1920.jpg" alt="" style="width:100%;" *ngIf="!cotizado">
+      <div class="" *ngIf="cotizado">
+        <div class=" ">
+          <div class="card-body">
+            <h5 class="card-title  resultado-titulo">Si en la fecha {{ finicio}} solicita un crédito por la cantidad de ${{monto.toLocaleString('es-MX')}}, y realiza {{pagos}} pagos de forma {{frecuencia.toLocaleString('es-MX')}}.</h5>
+            <h6 class="card-subtitle mb-2  resultado-texto"> Sus pagos seran de ${{pago.toLocaleString('es-MX')}} y el costo financiero de tu crédito es de ${{saldoFinal.toLocaleString('es-MX')}}.</h6>
+            <p class="card-text resultado-texto">Comisión por apertura: {{comicionApertura.toLocaleString()}}%</p>
+            <p class="card-text resultado-texto">Tasa anual: {{tasaAnual.toLocaleString()}}%</p>
+            <a (click)="print()" style="color:blue; cursor:pointer; font-family:BeaufortMediumItalic;">Ver tabla de amortización</a>
+          </div>
+          <div class="card-footer     recordatorio">
+            <h5 class=" ">SI SOLICITAS CRÉDITO, NO OLVIDES:</h5>
+            <small>
+              Incumplir tus obligaciones te puede generar comisiones e intereses moratorios.
+              Contratar créditos por arriba de tu capacidad de pago puede afectar tu historial crediticio.
+              En caso de que el préstamo requiera avalista, obligado solidario o coacreditado, el avalista, obligado solidario o coacreditado responderá como obligado principal frente a la Entidad Financiera.
+            </small>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>

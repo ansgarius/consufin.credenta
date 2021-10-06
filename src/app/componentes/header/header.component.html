@@ -1,0 +1,163 @@
+<!-- ======= Top Bar ======= -->
+<section id="topbar" class="d-flex align-items-center">
+  <div class="container d-flex justify-content-center justify-content-md-between">
+    <div class="contact-info d-flex align-items-center" >
+      <i class="fa fa-envelope  d-flex align-items-center">
+        &nbsp;<a href="mailto:hola@credenta.mx">hola@credenta.mx</a>
+      </i>
+
+      &nbsp;&nbsp;<i class="fa fa-phone-square  d-flex align-items-center">
+        <span>&nbsp;449&nbsp;400&nbsp;8448</span>
+      </i>
+
+    </div>
+    <div class="social-links d-none d-md-flex align-items-center">
+      <a href="https://twitter.com/credentamx" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.facebook.com/Credentamx-102991195364981" class="facebook"><i class="fa fa-facebook"></i></a>
+      <a href="https://www.instagram.com/credentamx/" class="instagram"><i class="fa fa-instagram"></i></a>
+      <!--<a class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+      <a href="https://api.whatsapp.com/send?phone=4494008448&text=" class="linkedin"><i class="fa fa-whatsapp"></i></a>
+
+    </div>
+  </div>
+</section>
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center" style="position: sticky; top: 0px;">
+  <div class="container d-flex align-items-center justify-content-between">
+
+    <h1 class="logo"> <img src="assets/CREDENTA.png"></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt=""></a>-->
+    <!--<nav id="navbar" class="navbar navbar-expand-lg navbar-light ">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item " *ngIf="!openSecion">
+            <a class=" nav-link   " (click)="entrar()" title="Ingreso al sistema"  >
+              Acceso
+              <span class="sr-only">(current)</span></a>
+          </li>
+
+
+          <li *ngIf="!openSecion">
+            <a class="nav-link" data-m="newAccount" (click)="nuevaCuenta()"  >
+              Crear cuenta
+            </a>
+          </li>
+
+
+          <li *ngIf="openSecion">
+            <a class="nav-link" (click)="cerrarSecion()"  >
+
+              Salir
+            </a>
+          </li>
+
+
+
+        </ul>
+      </div>
+    </nav>-->
+  </div>
+  <!--
+  <div class="row" style=" padding-bottom:1%;" *ngIf="panelFind">
+    <div class="col-lg-1">
+    </div>
+    <div class="col-md-1">
+      <i class="fa fa-search" aria-hidden="true" style=" float: right; padding-right:15%; cursor:pointer; " title="Buscar" (click)="search(data.value)"></i>
+    </div>
+    <div class="col-lg-8">
+      <input class="form-control " type="search" placeholder="Search" aria-label="Search" (keyup.enter)="search(data.value)" #data>
+    </div>
+    <div class="col-md-1">
+      <i class="fa fa-times" aria-hidden="true" title="Cerrar" (click)="panelFind=!panelFind" style="cursor:pointer;"></i>
+    </div>
+  </div>-->
+</header><!-- End Header -->
+<div class="text-center " *ngIf="nc">
+  <div class=" wrapper fadeInDown" *ngIf="getCode">
+    <div id="formContent">
+      <app-exito *ngIf="codeSucces && !cargando" [mensajeExito]="mensajeExito"></app-exito>
+      <app-error *ngIf="error" [errorMensaje]="errorMensaje"></app-error>
+      <app-spinner *ngIf="cargando"></app-spinner>
+      <div class="fadeIn first">
+        <img src="assets/CREDENTA.png" id="login-icon" alt="User Icon" />
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formRegistro">
+          <div class="form-group">
+            <input type="text" class="form-control" id="mail" placeholder="E-mail" formControlName="mail">
+            <div *ngIf="formRegistro.controls['mail'] .invalid">
+              <small class="text-danger form-control-feedback" *ngIf="formRegistro.controls['mail'].errors.required ">
+                Mail es requerido
+              </small>
+              <small class="text-danger form-control-feedback" *ngIf="formRegistro.controls['mail'].errors.pattern ">
+                Email inválido
+              </small>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="pass" placeholder="Contraseña" name="pass" formControlName="pass">
+          </div>
+          <button type="button" (click)="crearCuenta()" *ngIf=" formRegistro.valid" class="btn  ">Crear cuenta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin:5%;" *ngIf="sendCode">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="alert alert-success" role="alert" *ngIf="codeSucces && !cargando">
+        <!--Contenedor para mostrar el mensaje del servidor-->
+        <h6>
+          {{mensajeExito}}
+        </h6>
+        <!--Muestra el mensaje enviado por el servidor-->
+      </div>
+      <div class="alert alert-danger col-lg-12" *ngIf="error">
+        <!--Contenedor para mostrar los errores-->
+        <h6>
+          {{errorMensaje}}
+        </h6>
+        <!--Muestra el error enviado por el servidor-->
+      </div>
+      <h4 style="margin:8%;color:GRAY;">Te hemos enviado un codigo de verificacion.</h4>
+      <form class="form-horizontal" (ngSubmit)="validarCode(datosCode.value)" #datosCode="ngForm">
+        <div class="form-group">
+          <label for="code" style="opacity:.7;">
+            <small>Busque en su correo {{correo}} un código de 8 dígitos e ingréselo en la casilla de abajo (Expirará en 2 minutos).</small>
+          </label>
+          <input type="text" maxlength="10" class="form-control" id="code" placeholder="Codigo" name="code" ngModel>
+        </div>
+        <button type="submit" *ngIf="!cargando" class="btn btn-secundary" style="margin:8%;">Validar codigo</button> <br>
+        <button type="button" *ngIf="!cargando" class="btn btn-link" style="margin:8%;" (click)="sendCode=false; getCode=true">Reenviar mail</button> <br>
+      </form>
+      <div class="loader" *ngIf="cargando">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrapper fadeInDown" *ngIf="showlogin">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <app-exito *ngIf="codeSucces && !cargando" [mensajeExito]="mensajeExito"></app-exito>
+    <app-error *ngIf="error" [errorMensaje]="errorMensaje"></app-error>
+    <app-spinner *ngIf="cargando"></app-spinner>
+    <div class="fadeIn first">
+      <img src="assets/CREDENTA.png" id="login-icon" alt="User Icon" />
+    </div>
+    <!-- Login Form -->
+    <form [formGroup]="formLogin">
+      <input type="text" id="login" class="fadeIn second" name="usuario" placeholder="mail" formControlName="usuario">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" formControlName="password">
+      <input type="button" (click)="login()" class="fadeIn fourth" value="Log In">
+    </form>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+  </div>
+</div>

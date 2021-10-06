@@ -1,0 +1,54 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.btn-enter {
+  font-family: BeaufortMediumItalic;
+  color: var(--color-green);
+  font-size: 20px;
+  border: 2px solid var(--color-green);
+  border-radius: 5px;
+  padding: 5% 11%;
+}
+
+/*----------------------------------------------------------------------------*/
+/*
+          *medias queries
+*/
+/*xsm*/
+@media (min-width:0px) {
+  .content {
+    height: 60vh;
+    padding: 0% 20%;
+  }
+
+  .main-tittle {
+    font-family: BeaufortMediumItalic;
+    color: var(--color-green);
+    font-size: 40px;
+  }
+}
+
+/* small*/
+@media (min-width:576px) {}
+
+/*medium*/
+@media (min-width:768px) {
+  .content {
+    height: 100vh;
+    padding: 0% 6%;
+  }
+
+  .main-tittle {
+    font-family: BeaufortMediumItalic;
+    color: var(--color-green);
+    font-size: 60px;
+  }
+}
+
+/*Large*/
+@media (min-width:992px) {}
+
+/*Extra large*/
+@media (min-width:1200px) {}

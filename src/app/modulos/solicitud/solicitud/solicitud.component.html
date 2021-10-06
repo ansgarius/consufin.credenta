@@ -1,0 +1,1680 @@
+<div class="card hovercard ">
+  <div class="card-background">
+    <img alt="" src="assets/CREDENTA.png">
+    <!-- http://lorempixel.com/850/280/people/9/ -->
+  </div>
+  <div class="useravatar">
+    <img alt="" src="assets/CREDENTA.png">
+  </div>
+  <div class="card-info">
+    <span class="card-title">
+      <!--Ingresar aqui texto cabezwera-->
+    </span>
+  </div>
+</div>
+
+<app-spinner *ngIf="cargando"></app-spinner>
+<app-exito *ngIf="success && !cargando" [mensajeExito]="mensajeExito"></app-exito>
+<app-error *ngIf="error && !cargando" [errorMensaje]="mensajeError"></app-error>
+
+
+<div class="wrapper fadeInDown" *ngIf="showForm">
+  <div id="formContent">
+    <div class="fadeIn first">
+      <img src="assets/assets/CREDENTA.png" id="login-icon" alt="User Icon" />
+    </div>
+    <!-- Login Form -->
+    <p class="divider-text">
+      <span class="bg-light">Verificación</span>
+    </p>
+    <form [formGroup]="forma1" (ngSubmit)="store()">
+      <input type="text" id="login" class=" second" placeholder="Ingresé código de Verificación" formControlName="clave">
+      <button class=" profile-edit-btn mt-2 mb-2 fourth" type="submit" name="btnAddMore" value="Enviar" style="color:white;" *ngIf="telCodeValidation===forma1.controls['clave'].value">Enviar Solicitud</button>
+      <br>
+    </form>
+  </div>
+</div>
+
+
+<!--<app-cargando *ngIf="cargando"></app-cargando>-->
+<!--<div *ngIf="!cargando ">-->
+<div >
+  <form [formGroup]="forma" enctype="multipart/form-data">
+    <div class="row ">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+        <div *ngIf="!forma.controls['latitud'].valid">
+          <div class="alert alert-warning form-control-feedback" *ngIf="forma.controls['latitud'].errors.required">
+            Por favor permitenos acceder a tu ubicacion.
+          </div>
+        </div>
+    <!-- ======= Resume of all formcontrol invalid =======
+
+{{findInvalidControls()}}
+   -->
+
+        <div *ngIf="tabs[0]" align="center">
+
+
+
+          <!-- ======= Services Section ======= -->
+          <section id="services" class="services">
+            <div class="container">
+              <br><br>
+              <div class="section-title">
+                <span class="badge   text-white" style="background:var(--color-green); font-family:BeaufortMediumItalic;">
+                  <h6>Requisitos </h6>
+                </span>
+                <br>
+                <b>
+                  <h3 style="font-family:BeaufortMediumItalic; color:var(--color-gray);">Ten a la mano los siguientes
+                    <span   style=" color:var(--color-green);">Documentos</span></h3>
+                </b>
+
+              </div>
+              <br>
+              <br>
+              <div class="row">
+
+
+                <div class="col-md-4">
+                  <div class="list-group" id="list-tab" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Credencial de elector</a>
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Comprobante de domicilio</a>
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">2 Referencias</a>
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Numero de seguro social</a>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                      <div class=" d-flex align-items-stretch">
+                        <div class="icon-box">
+                          <div class="icon">
+                            <i class="fa fa-id-card" aria-hidden="true"></i>
+                          </div>
+                          <h4><a href="javascript:void(0)">Credencial de elector</a></h4>
+                          <p>Vigente</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+
+
+                      <div class="  d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                          <div class="icon">
+                            <i class="fa fa-map-marker"></i>
+                          </div>
+                          <h4><a href="javascript:void(0)">Comprobante de domicilio</a></h4>
+                          <p>Menor a 3 meses</p>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                      <div class="  d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                          <div class="icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                          <h4><a href="javascript:void(0)">2 Referencias</a></h4>
+                          <p>No habiten el mismo domicilio</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                      <div class="  d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                          <div class="icon"><i class="fa fa-id-card-o"></i></div>
+                          <h4><a href="javascript:void(0)">Numero de seguro social</a></h4>
+                          <p> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+          </section><!-- End Services Section -->
+
+          <br><br><br><br>
+
+          <fieldset>
+            <legend style="margin-left:2%;">Simula tu crédito:
+            </legend>
+            <div class="alert alert-warning" role="alert" style="font-family:BeaufortMediumItalic;">
+              Tasa anual desde 12.6% hasta 34% (simulacion al 32%)
+            </div>
+            <div class=" form-group d-flex flex-column align-items-center">
+              <label for="inputpago" class="form-label">PAGO:</label>
+              <select class="custom-select custom-select-sm mb-3 second" id="inputfrecpago" (change)="cotiza('monto')" formControlName="frecuencaPago">
+                <option value="mensual">Mensual</option>
+                <option value="quincenal">Quincenal</option>
+                <option value="semanal">Semanal</option>
+              </select>
+              <div *ngIf="!forma.controls['frecuencaPago'].valid" class="form-control-feedback text-danger">
+                Seleccione la frecuencia de pago deseada*
+              </div>
+              <h4 class="col-md-4"> <label>{{forma.controls['pago'].value|number}} </label> </h4>
+              <input type="range" class="form-range form-control col-md-8" min="500" max="50000" step="1000" id="inputpago" (change)="cotiza('pago')" formControlName="pago">
+              <div *ngIf="!forma.controls['pago'].valid" class="form-control-feedback text-danger">
+                Campo obligatorio
+              </div>
+            </div>
+            <div class=" form-group   d-flex flex-column align-items-center">
+              <label for="inputmonto" class="form-label">MONTO: </label>
+              <input type="range" class="form-range form-control col-md-8" min="16000" max="300000" step="1000" id="inputmonto" (change)="cotiza('monto')" formControlName="monto">
+              <h4 class="col-md-3"> <label>{{forma.controls['monto'].value | number}}</label> </h4>
+              <div *ngIf="!forma.controls['monto'].valid" class="form-control-feedback text-danger">
+                Campo obligatorio
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-center form-group" *ngIf="forma.controls['frecuencaPago'].value!='semanal'">
+              <label for="inputplazo" class="form-label">PLAZO:</label>
+              <input type="range" class="form-range form-control col-md-8" min="6" max="36" step="1" id="inputplazo" (change)="cotiza('monto')" formControlName="plazo">
+              <h4 class="col-md-4"> <label>{{forma.controls['plazo'].value}} meses</label> </h4>
+              <div *ngIf="!forma.controls['plazo'].valid" class="form-control-feedback text-danger">
+                Campo obligatorio
+              </div>
+            </div>
+            <div class="d-flex flex-column align-items-center form-group" *ngIf="forma.controls['frecuencaPago'].value=='semanal'">
+              <label for="inputplazo" class="form-label">Plazo</label>
+              <input type="range" class="form-range form-control col-md-8" min="1" max="156" step="1" id="inputplazo" (change)="cotiza('monto')" formControlName="plazo">
+              <h4 class="col-md-4"> <label>{{forma.controls['plazo'].value}} semanas</label> </h4>
+              <div *ngIf="!forma.controls['plazo'].valid" class="form-control-feedback text-danger">
+                Campo obligatorio
+              </div>
+            </div>
+            <p style="padding:0px 10%;  font-family:BeaufortMediumItalic; color:var(--color-green);">
+              CAT anual promedio del {{responseCat.Cat}}% sin IVA. Fecha de cálculo {{responseCat.Fecha}}.
+              La tasa presentada es anual, simple, fija, antes de impuestos y podrá variar del 12.6% AL 34% según la calificación crediticia.
+            </p>
+          </fieldset>
+          <br><br><br><br>
+
+        </div>
+        <div *ngIf="tabs[1]" align="center">
+          <!--<fieldset class="col-md-10">
+               <legend style="margin-left:2%;">Documentos:
+               </legend>
+               <label for="input14" class="col-12">Credencial de elector: </label>
+               <p class="text-success">{{forma.controls['ine'].value.name}}</p>
+               <div class="form-check">
+                 <input class="form-check-input" type="radio" value="archivo" name="RadioIne" id="flexRadioDefault2" [ngModelOptions]="{standalone: true}" [(ngModel)]="controlIne" checked>
+                 <label class="form-check-label" for="flexRadioDefault2">
+                   Cargar archivo
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="radio" value="foto" name="RadioIne" id="flexRadioDefault1" [ngModelOptions]="{standalone: true}" [(ngModel)]="controlIne">
+                 <label class="form-check-label" for="flexRadioDefault1">
+                   Tomar foto
+                 </label>
+               </div>
+               <br><br>
+               <div class="" *ngIf="controlIne=='archivo'">
+                 <div class="progress">
+                   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="ocrLoad*100 + '%'">{{ocrLoad*100}}%</div>
+                 </div>
+                 <input type="file" accept=".pdf , .jpeg" id="input14" class="form-control-file col-12" (change)="fileChange($event)">
+               </div>
+               <br><br>
+
+             </fieldset>-->
+          <!--<fieldset class="col-md-10">
+               <legend style="margin-left:2%;">Documentos:
+               </legend>
+               <label for="input15" class="col-12">Comprobante de domicilio:</label>
+               <p class="text-success">{{forma.controls['comprobante'].value.name}}</p>
+
+               <div class="form-check">
+                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                 <label class="form-check-label" for="flexRadioDefault1">
+                   Tomar foto
+                 </label>
+               </div>
+               <div class="form-check">
+                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                 <label class="form-check-label" for="flexRadioDefault2">
+                   Cargar archivo
+                 </label>
+               </div>
+               <br><br>
+               <div class="" *ngIf="false">
+                 <input type="file" accept=".pdf , .jpeg" id="input15" class="form-control-file" (change)="comprobanteChange($event)">
+               </div>
+             </fieldset>-->
+          <fieldset>
+            <legend style="margin-left:2%;">Paso {{currentDocStep+1}} de 4:
+            </legend>
+
+            <div class="d-flex justify-content-between ">
+              <i class="fa fa-2x fa-arrow-left" style="color:gray;  " aria-hidden="true" *ngIf="currentDocStep>1"  (click)="nextPrevDoc(-1)"></i>
+              <i class="fa fa-2x fa-arrow-right" style="color:gray;" aria-hidden="true" *ngIf="currentDocStep<3 && currentDocStep>0" (click)="nextPrevDoc(1)"></i>
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="selfieINvalid" style="font-family:BeaufortMediumItalic;">
+{{camError}}
+</div>
+            <div *ngIf="forma.controls['selfie'].valid && currentDocStep==0">
+
+              <div class="alert alert-success form-control-feedback">
+                {{docStep[currentDocStep]}} (Captura exitosa):{{textOcr}}
+              </div>
+            </div>
+
+            <div *ngIf="!forma.controls['selfie'].valid && currentDocStep==0">
+              <h2><span class="badge   text-light" style="background:var(--color-green); font-family:BankGothicBT-Medium;">Toma foto</span></h2>
+              <h2 *ngIf="forma.controls['selfie'].errors.required"><span class="badge  text-light"  style="background:var(--color-green); font-family:BankGothicBT-Medium;">{{docStep[currentDocStep]}} {{textOcr}}</span></h2>
+            </div>
+            <div *ngIf="!forma.controls['ine'].valid && currentDocStep==1">
+              <h2><span class="badge  bg-info text-light" >Toma foto</span></h2>
+              <h2 *ngIf="forma.controls['ine'].errors.required"><span class="badge  bg-info text-light">
+                  {{docStep[currentDocStep]}} {{textOcr}}</span></h2>
+
+
+            </div>
+
+            <div *ngIf="forma.controls['ine'].valid && currentDocStep==1">
+
+              <div class="alert alert-success form-control-feedback">
+                {{docStep[currentDocStep]}} (Captura exitosa):{{textOcr}}
+              </div>
+            </div>
+            <div *ngIf="!forma.controls['ineBack'].valid && currentDocStep==2">
+              <h2><span class="badge  bg-info text-light">Toma foto</span></h2>
+              <h2 *ngIf="forma.controls['ineBack'].errors.required"><span class="  bg-info text-light">
+                  {{docStep[currentDocStep]}} {{textOcr}}</span></h2>
+
+
+            </div>
+            <div *ngIf="forma.controls['ineBack'].valid && currentDocStep==2">
+
+              <div class="alert alert-success form-control-feedback">
+                {{docStep[currentDocStep]}} (Captura exitosa):{{textOcr}}
+              </div>
+            </div>
+            <div *ngIf="!forma.controls['comprobante'].valid && currentDocStep==3">
+              <h2><span class="badge  bg-info text-light">Toma foto</span></h2>
+              <h2 *ngIf="forma.controls['comprobante'].errors.required"><span class="badge  bg-info text-light">
+                  {{docStep[currentDocStep]}} {{textOcr}}</span></h2>
+
+            </div>
+            <div *ngIf="forma.controls['comprobante'].valid && currentDocStep==3">
+
+              <div class="alert alert-success form-control-feedback">
+                {{docStep[currentDocStep]}} (Captura exitosa):{{textOcr}}
+              </div>
+            </div>
+
+
+
+
+
+
+            <canvas #canvas></canvas>
+
+
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" [style.width]="ocrLoad*100 + '%'">{{ocrLoad*100}}%</div>
+            </div>
+
+
+            <div class="cam">
+
+              <canvas id="canvasShapes" class="canvasShapes">
+              </canvas>
+
+              <video #video class="vid" (loadedmetadata)="loadedmetadata()"></video>
+
+              <div class=" btn-group " role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary  " (click)="startCamera()">
+                  <i class="fa fa-power-off" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-secondary  " (click)="torch()" *ngIf="cameraOn">
+                  <i class="fa fa-bolt" aria-hidden="true"></i></button>
+                <button type="button" class="btn btn-secondary  " (click)="capture()" *ngIf="cameraOn">
+                  <i class="fa fa-camera" aria-hidden="true"></i></button>
+                <!--<button type="button" class="btn btn-secondary col-4"  (click)="startCamera()">Encender</button>-->
+                <button type="button" class="btn btn-secondary  " (click)="switchCamera()" *ngIf="cameraOn">
+                  <i class="fa fa-retweet" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div *ngIf="tabs[2]" align="center">
+          <br><br>
+          <div class="row form-group">
+            <div class="col-md-3">
+              <label for="sucursals_id">Sucursal CONSUFIN:</label>
+            </div>
+            <div class="col-md-6">
+              <select class="custom-select custom-select-sm mb-3" id="sucursals_id" formControlName="sucursals_id">
+                <option selected></option>
+                <option *ngFor="let tabla of responseSucursal" [value]=" tabla.id ">
+                  {{ tabla.Nombre }}
+                </option>
+              </select>
+              <div *ngIf="!forma.controls['sucursals_id'].valid" class="form-control-feedback text-danger">
+                La sucursal es requerida
+              </div>
+            </div>
+          </div>
+          <!--  <fieldset class="col-md-10">
+               <legend style="margin-left:2%;">Datos de la cuenta bancaria:
+               </legend>
+               <div class="row form-group">
+                 <div class="col-md-3">
+                   <label for="inputclabe">Clabe</label>
+                 </div>
+                 <div class="col-md-6">
+                   <input type="text" class="form-control" id="inputclabe" (input)="setBanco($event)" maxlength="18" formControlName="clabe">
+                   <div *ngIf="!forma.controls['clabe'].valid" class="form-control-feedback text-danger">
+
+                     <P class="text-danger form-control-feedback" *ngIf="forma.controls['clabe'].errors.required ">
+                       La clabe es requerida
+                     </P>
+                     <P class="text-danger form-control-feedback" *ngIf="forma.controls['clabe'].errors.pattern ">
+                       Se requiere 18 digitos.
+                     </P>
+                   </div>
+                 </div>
+               </div>
+
+               <div class="row form-group">
+                 <div class="col-md-3">
+                   <label for="inputcuenta">Numero de tarjeta</label>
+                 </div>
+                 <div class="col-md-6">
+                   <input type="number" class="form-control" id="inputcuenta" formControlName="num_tarjeta">
+                   <div *ngIf="!forma.controls['num_tarjeta'].valid" class="form-control-feedback text-danger">
+
+                     <P class="text-danger form-control-feedback" *ngIf="forma.controls['num_tarjeta'].errors.required ">
+                       El numero de tarjeta es requerido
+                     </P>
+                     <P class="text-danger form-control-feedback" *ngIf="forma.controls['num_tarjeta'].errors.pattern ">
+                       Se requiere 16 digitos.
+                     </P>
+                   </div>
+                 </div>
+               </div>
+               <div class="row form-group">
+                 <div class="col-md-3">
+                   <label for="inputbanco">Banco</label>
+                 </div>
+                 <div class="col-md-6">
+                   <input type="text" maxlength="255" class="form-control" id="inputbanco" formControlName="banco">
+                   <div *ngIf="!forma.controls['banco'].valid" class="form-control-feedback text-danger">
+                     El banco es requerido
+                   </div>
+                 </div>
+               </div>
+             </fieldset>-->
+
+          <fieldset>
+            <legend style="margin-left:2%;">Datos de la empresa:
+            </legend>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputEmpresa">Empresa</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" maxlength="255" class="form-control" id="inputEmpresa" formControlName="empresa">
+                <div *ngIf="!forma.controls['empresa'].valid" class="form-control-feedback text-danger">
+                  La empresa es requerida
+                </div>
+                <!--  <datalist id="browsers">
+                     <option *ngFor="let grupo of res" [value]=" grupo.nombre ">
+                       {{ grupo.nombre }}
+                     </option>
+
+                   </datalist>-->
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputclve">Clave empleado</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" maxlength="100" class="form-control" id="inputclve" formControlName="clve_empleado">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputpuesto">Puesto</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" maxlength="255" class="form-control" id="inputpuesto" formControlName="puesto">
+                <div *ngIf="!forma.controls['puesto'].valid" class="form-control-feedback text-danger">
+                  El puesto es requerido
+                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputsueldo">Sueldo mensual (libre)</label>
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="form-control" id="inputsueldo" formControlName="sueldo_mensual">
+                <div *ngIf="!forma.controls['sueldo_mensual'].valid" class="form-control-feedback text-danger">
+                  El sueldo mensual(libre) es requerido
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputfie">Fecha ingreso a la empresa</label>
+              </div>
+              <div class="col-md-6">
+                <input type="date" class="form-control" id="inputfie" formControlName="f_ingreso_empresa">
+                <div *ngIf="!forma.controls['f_ingreso_empresa'].valid" class="form-control-feedback text-danger">
+                  La fecha de ingreso a la empresa es requerida
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend style="margin-left:2%;">Datos del solicitante:
+            </legend>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="input7">Curp</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" maxlength="18" id="input7" (input)="getCurp($event)" formControlName="Curp">
+                <div *ngIf="!forma.controls['Curp'].valid" class="form-control-feedback text-danger">
+                  Curp es requerido
+                </div>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputnum_ife">No. del IFE/PASAPORTE</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" maxlength="20" id="inputnum_ife" formControlName="no_ife_passport">
+              </div>
+            </div>
+
+
+
+
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputface">Facebook</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" maxlength="255" class="form-control" id="inputface" formControlName="facebook">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputinsta">Instagram</label>
+              </div>
+              <div class="col-md-6">
+                <input type="text" maxlength="255" class="form-control" id="inputinsta" formControlName="instagram">
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputcasa">Casa</label>
+              </div>
+              <div class="col-md-6">
+                <select class="custom-select custom-select-sm mb-3" id="inputcasa" [class.is-invalid]="forma.get('casa').invalid " formControlName="casa">
+                  <option value="PROPIA">Propia</option>
+                  <option value="RENTADA">Rentada</option>
+                  <option value="FAMILIAR">Familiar</option>
+                  <option value="PAGANDO">Pagando</option>
+                  <option value="OTRA">Otra</option>
+                </select>
+                <div *ngIf="!forma.controls['casa'].valid" class="form-control-feedback text-danger">
+                  Tipo de vivienda es requerida
+                </div>
+              </div>
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputresi">Fecha de inicio de residencia en domicilio actual</label>
+              </div>
+              <div class="col-md-6">
+                <input type="date" class="form-control" id="inputresi" formControlName="tiempo_residencia">
+                <div *ngIf="!forma.controls['tiempo_residencia'].valid" class="form-control-feedback text-danger">
+                  Años de residencia es requerido
+                </div>
+              </div>
+
+            </div>
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputescolaridad">Escolaridad</label>
+              </div>
+              <div class="col-md-6">
+                <select class="custom-select custom-select-sm mb-3 second" id="inputescolaridad" formControlName="escolaridad">
+                  <option value="Sin estudio">Sin estudio</option>
+                  <option value="Primaria">Primaria</option>
+                  <option value="Secundaria">Secundaria</option>
+                  <option value="Preparatoria(Bachillerato)">Preparatoria(Bachillerato)</option>
+                  <option value="Escuela técnica">Escuela técnica</option>
+                  <option value="Universidad">Universidad</option>
+                  <option value="Maestria">Maestria</option>
+                  <option value="Doctorado o superior">Doctorado o superior</option>
+                </select>
+
+
+
+                <div *ngIf="!forma.controls['escolaridad'].valid" class="form-control-feedback text-danger">
+                  Escolaridad es requerida
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="inputnss">Número de seguridad social</label>
+              </div>
+              <div class="col-md-6">
+                <input type="number" class="form-control" id="inputnss" formControlName="nss">
+                <div *ngIf="!forma.controls['nss'].valid" class="form-control-feedback text-danger">
+
+                  <small class="text-danger form-control-feedback" *ngIf="forma.controls['nss'].errors.required ">
+                    Número de seguridad social es requerido.
+                  </small>
+                  <small class="text-danger form-control-feedback" *ngIf="forma.controls['nss'].errors.pattern ">
+                    Se requiere 11 digitos.
+                  </small>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="row form-group">
+              <div class="col-md-3">
+                <label for="input13">Estado Civil</label>
+              </div>
+              <div class="col-md-6">
+                <select class="custom-select custom-select-sm mb-3" id="input13" [class.is-invalid]="forma.get('estadoCivil').invalid " formControlName="estadoCivil">
+                  <option value="Viudo/a">Viudo/a</option>
+                  <option value="Divorciado/a">Divorciado/a</option>
+                  <option value="Casado/a">Casado/a</option>
+                  <option value="Soltero/a">Soltero/a</option>
+                  <option value="UnionLibre">Union Libre</option>
+                  <option value="Separado">Separado</option>
+                  <option value="Otra">Otra</option>
+                </select>
+                <div *ngIf="forma.controls['estadoCivil'].invalid" class="text-danger form-control-feedback">
+
+                  Estado civil es requerido
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="" *ngIf="curpValid">
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input1">Primer nombre</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="40" class="form-control" id="input1" formControlName="Nombre1">
+                  <div *ngIf="!forma.controls['Nombre1'].valid" class="form-control-feedback text-danger">
+                    Primer nombre es requerido
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input2">Segundo nombre</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="40" class="form-control" id="input2" formControlName="Nombre2">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input3">Primer apellido</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" maxlength="40" id="input3" formControlName="Apel1">
+                  <div *ngIf="!forma.controls['Apel1'].valid" class="form-control-feedback text-danger">
+                    Primer apellido es requerido
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input4">Segundo apellido</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" maxlength="40" id="input4" formControlName="Apel2">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input5">Fecha de nacimiento</label> <br>
+                </div>
+                <div class="col-md-6">
+                  <input type="date" id="input5" class="form-control" formControlName="Fnace">
+                  <div *ngIf="!forma.controls['Fnace'].valid" class="form-control-feedback text-danger">
+                    Fecha de nacimiento es requerida
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input6">RFC</label>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <input type="text" class="form-control col-md-10" maxlength="13" id="input6" formControlName="Rfc">
+                    <div *ngIf="!forma.controls['Rfc'].valid" class="form-control-feedback text-danger">
+                      RFC es requerido
+                    </div>
+                    <!--  <i class="fa fa-calculator " (click)="getRfc()" style="cursor:pointer;" aria-hidden="true"></i>-->
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input8">Pais de origen</label>
+                </div>
+                <div class="col-md-6">
+                  <select class="custom-select custom-select-sm mb-3" id="input8" formControlName="paisorigen">
+                    <option selected></option>
+                    <option *ngFor="let tabla of responsePais" [value]=" tabla.id ">
+                      {{ tabla.pais }}
+                    </option>
+                  </select>
+                  <div *ngIf="!forma.controls['paisorigen'].valid" class="form-control-feedback text-danger">
+                    Pais de origen es requerido
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input9">Estado de nacimiento</label>
+                </div>
+                <div class="col-md-6">
+                  <select class="custom-select custom-select-sm mb-3" id="input9" formControlName="estados_edoNace">
+                    <option selected></option>
+                    <option *ngFor="let tabla of responseEdos" [value]=" tabla.id ">
+                      {{ tabla.Estado }}
+                    </option>
+                  </select>
+                  <div *ngIf="!forma.controls['estados_edoNace'].valid" class="form-control-feedback text-danger">
+                    Estado de nacimiento es requerido
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input10">Genero</label>
+                </div>
+                <div class="col-md-6">
+                  <select class="custom-select custom-select-sm mb-3" id="input10" formControlName="genero">
+                    <option value="H">Hombre</option>
+                    <option value="M">Mujer</option>
+                  </select>
+                  <div *ngIf="!forma.controls['genero'].valid" class="form-control-feedback text-danger">
+                    Genero es requerido
+                  </div>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="inputtpersona">Tipo de persona</label>
+                </div>
+                <div class="col-md-6">
+                  <select class="custom-select custom-select-sm mb-3" id="inputtpersona" formControlName="Tpersona">
+                    <option value="fisica" selected>Fisica</option>
+                    <option value="Moral">Moral</option>
+                    <option value="fisica_actividad_empresarial">Fisica actividad empresarial</option>
+                  </select>
+                  <div *ngIf="!forma.controls['Tpersona'].valid" class="form-control-feedback text-danger">
+                    Tipo de persona es required
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </fieldset>
+
+
+
+        </div>
+        <div *ngIf="tabs[3]" align="center">
+
+          <fieldset>
+            <legend style="margin-left:2%;">Telefonos:
+            </legend>
+            <div formArrayName="telefonos">
+              <div *ngFor="let control of forma.controls['telefonos'].controls; let i=index" formGroupName={{i}}>
+
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label>Telefono {{i+1}}</label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" maxlength="10" formControlName="telefono">
+                    <div *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].invalid">
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.required ">
+                        Telefono es requerido
+                      </small>
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.pattern ">
+                        Se requiere 10 digitos.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label>Tipo de telefono {{i+1}}</label>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="custom-select custom-select-sm mb-1 " style="height:50px;" formControlName='telTipo'>
+                      <option selected></option>
+                      <option value="Fijo">Fijo </option>
+                      <option value="Celular">Celular </option>
+                    </select>
+
+                    <div *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].invalid">
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].errors.required ">
+                        tipo de telefono es requerido
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" (click)="popTelefono(i)" class="btn btn-sm btn-danger ">
+                  Borrar telefono
+                </button>
+
+              </div>
+              <br>
+              <div style="float:right;">
+                <button type="button" class="btn btn-sm" name="button" (click)="addTelefono()">
+                  Agregar otro
+                </button>
+
+              </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+          </fieldset>
+          <br>
+
+          <fieldset>
+            <legend style="margin-left:2%;">E-mail:
+            </legend>
+            <div formArrayName="mails">
+
+
+              <div class="row form-group" *ngFor="let control of forma.controls['mails'].controls; let i=index" formGroupName={{i}}>
+                <div class="col-md-3">
+                  <label for="inputmail"> Mail:</label>
+                </div>
+                <div class="col-md-6">
+
+                  <input type="email" maxlength="100" class="form-control " id="inputmail" [class.is-invalid]="forma.controls['mails'].controls[i].controls['mail'].invalid " formControlName="mail">
+                  <div *ngIf="forma.controls['mails'].controls[i].controls['mail'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.required">
+                      Mail es requerido
+                    </small>
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.pattern ">
+                      Formato incorrecto.
+                    </small>
+                  </div>
+
+
+                  <button type="button" (click)="popMail(i)" class="btn btn-sm btn-danger">
+                    Borrar Correo
+                  </button>
+                </div>
+
+              </div>
+
+              <div style="float:right;">
+                <button type="button" class="btn btn-sm btn-info" (click)="addMail()" name="button">
+                  Agregar Correo
+                </button>
+              </div>
+              <br>
+              <br>
+              <br>
+            </div>
+          </fieldset>
+
+          <br>
+          <div formArrayName="direcciones">
+            <fieldset *ngFor="let control of forma.controls['direcciones'].controls; let i=index" formGroupName={{i}}>
+              <legend style="margin-left:2%;">Direccion:
+              </legend>
+
+
+
+
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input7"> Calle:</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" placeholder="Calle" class="form-control  " maxlength="100" [class.is-invalid]="forma.controls['direcciones'].controls[i].controls['calle'].invalid " id="input7" formControlName="calle">
+                  <div *ngIf="forma.controls['direcciones'].controls[i].controls['calle'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['direcciones'].controls[i].controls['calle'].errors.required">
+                      La calle es requerida
+                    </small>
+                    <div *ngIf="forma.controls['direcciones'].controls[i].controls['calle'].errors.maxlength">
+                      <small class="text-danger form-control-feedback"
+                        *ngIf="forma.controls['direcciones'].controls[i].controls['calle'].errors.maxlength.actualLength>forma.controls['direcciones'].controls[i].controls['calle'].errors.maxlength.requiredLength">
+                        Longitud maxima 100
+                      </small>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input8"> Numero interior:</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control  " maxlength="5" [class.is-invalid]="forma.controls['direcciones'].controls[i].controls['Ncalle'].invalid " id="input8" placeholder="Numero Exterior:" formControlName="Ncalle">
+                  <div *ngIf="forma.controls['direcciones'].controls[i].controls['Ncalle'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['direcciones'].controls[i].controls['Ncalle'].errors.required ">
+                      Es requerido
+                    </small>
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['direcciones'].controls[i].controls['Ncalle'].errors.pattern ">
+                      Solo se aceptan de 1 a 5 digitos.
+                    </small>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input9"> Numero Exterior:</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="40" class="form-control " id="input9" [class.is-invalid]="forma.controls['direcciones'].controls[i].controls['Ninterior'].invalid " id="input9" placeholder="Numero Interior:"
+                    formControlName="Ninterior">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="inputcp"> Codigo postal: </label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control  " maxlength="5" [class.is-invalid]="forma.controls['direcciones'].controls[i].controls['CodigoPostal'].invalid " id="inputcp" formControlName="CodigoPostal">
+                  <div *ngIf="forma.controls['direcciones'].controls[i].controls['CodigoPostal'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['direcciones'].controls[i].controls['CodigoPostal'].errors.required ">
+                      El codigo postal es requerido
+                    </small>
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['direcciones'].controls[i].controls['CodigoPostal'].errors.pattern ">
+                      Se requiere 5 digitos.
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input5"> Colonia: </label>
+                </div>
+                <div class="col-md-6">
+                  <select class="custom-select custom-select-sm mb-1 " style="height:50px;" [class.is-invalid]="forma.controls['direcciones'].controls[i].controls['Colonia'].invalid " id="input5" formControlName='Colonia'>
+                    <option selected value=""></option>
+                    <option *ngFor="let registro of resCps" [value]=" registro.d_asenta ">
+                      {{ registro.d_asenta }}
+                    </option>
+                  </select>
+                  <div *ngIf="forma.controls['direcciones'].controls[i].controls['Colonia'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['direcciones'].controls[i].controls['Colonia'].errors.required">
+                      La Colonia es requerida
+                    </small>
+                    <div *ngIf="forma.controls['direcciones'].controls[i].controls['Colonia'].errors.maxlength">
+                      <small class="text-danger form-control-feedback"
+                        *ngIf="forma.controls['direcciones'].controls[i].controls['Colonia'].errors.maxlength.actualLength>forma.controls['direcciones'].controls[i].controls['Colonia'].errors.maxlength.requiredLength">
+                        Longitud maxima 100
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+        <div *ngIf="tabs[4]" align="center">
+          <fieldset formArrayName="estFinanc">
+            <legend style="margin-left:2%;"> Ingresos y Egresos
+              <!--Estudio financiero de gastos mensuales:-->
+            </legend>
+            <h4><b>Egresos</b></h4>
+            <div *ngFor="let control of forma.controls['estFinanc'].controls; let i=index" formGroupName={{i}}>
+              <div class="row form-group" *ngIf="forma.controls['estFinanc'].controls[i].controls['tipo'].value==='egreso'">
+                <div class="col-md-3">
+                  <label for="">{{forma.controls['estFinanc'].controls[i].controls['concepto'].value}} </label>
+                  <!-- <select class="custom-select custom-select-lg mb-3" [class.is-invalid]="forma.controls['estFinanc'].controls[i].controls['concepto_id'].invalid " [attr.disabled]="true" style="color:black; background:white;"
+                        formControlName="concepto_id">
+                        <option *ngFor="let registro of responseConceptoFin" [value]=" registro.id ">
+                          {{ registro.tipo }}: {{ registro.concepto }}
+                        </option>
+                      </select>
+                      <div *ngIf="forma.controls['estFinanc'].controls[i].controls['concepto_id'].invalid">
+                        <small class="text-danger form-control-feedback" *ngIf="forma.controls['estFinanc'].controls[i].controls['concepto_id'].errors.required ">
+                          Campo Obligatorio
+                        </small>
+                        <small class="text-danger form-control-feedback" *ngIf="forma.controls['estFinanc'].controls[i].controls['concepto_id'].errors.pattern ">
+                          Solo se aceptan de 2 a 3 digitos.
+                        </small>
+                      </div>-->
+                </div>
+                <div class="col-md-6">
+                  <input type="number" class="form-control" placeholder="monto" formControlName="monto">
+                  <div *ngIf="forma.controls['estFinanc'].controls[i].controls['monto'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['estFinanc'].controls[i].controls['monto'].errors.required ">
+                      Monto es requeridos
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h4><b>Ingresos</b></h4>
+            <div *ngFor="let control of forma.controls['estFinanc'].controls; let i=index" formGroupName={{i}}>
+              <div class="row form-group" *ngIf="forma.controls['estFinanc'].controls[i].controls['tipo'].value==='ingreso'">
+                <div class="col-md-3">
+                  <label for="">{{forma.controls['estFinanc'].controls[i].controls['concepto'].value}} </label>
+                  <!-- <select class="custom-select custom-select-lg mb-3" [class.is-invalid]="forma.controls['estFinanc'].controls[i].controls['concepto_id'].invalid " [attr.disabled]="true" style="color:black; background:white;"
+                            formControlName="concepto_id">
+                            <option *ngFor="let registro of responseConceptoFin" [value]=" registro.id ">
+                              {{ registro.tipo }}: {{ registro.concepto }}
+                            </option>
+                          </select>
+                          <div *ngIf="forma.controls['estFinanc'].controls[i].controls['concepto_id'].invalid">
+                            <small class="text-danger form-control-feedback" *ngIf="forma.controls['estFinanc'].controls[i].controls['concepto_id'].errors.required ">
+                              Campo Obligatorio
+                            </small>
+                            <small class="text-danger form-control-feedback" *ngIf="forma.controls['estFinanc'].controls[i].controls['concepto_id'].errors.pattern ">
+                              Solo se aceptan de 2 a 3 digitos.
+                            </small>
+                          </div>-->
+                </div>
+                <div class="col-md-6">
+                  <input type="number" class="form-control" placeholder="monto" formControlName="monto">
+                  <div *ngIf="forma.controls['estFinanc'].controls[i].controls['monto'].invalid">
+                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['estFinanc'].controls[i].controls['monto'].errors.required ">
+                      Monto es requeridos
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div *ngIf="tabs[5]" align="center">
+          <div formArrayName="referencias">
+            <fieldset *ngFor="let referencia of forma.controls['referencias'].controls; let i=index" formGroupName={{i}}>
+              <legend style="margin-left:2%;">Referencia {{i+1}}:
+              </legend>
+              <br>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="inputref1">Primer nombre</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="20" class="form-control" id="inputref1" formControlName="nombre1">
+                  <div *ngIf="forma.controls['referencias'].controls[i].controls['nombre1'].invalid " class="form-control-feedback text-danger">
+                    <p *ngIf="forma.controls['referencias'].controls[i].controls['nombre1'].errors.required " class="text-danger form-control-feedback">
+                      Primer nombre es requerido
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input2">Segundo nombre</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="20" class="form-control" id="input2" formControlName="nombre2">
+                </div>
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="input3">Primer apellido</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="20" class="form-control" id="input3" formControlName="apel1">
+                  <div *ngIf="forma.controls['referencias'].controls[i].controls['apel1'].invalid " class="form-control-feedback text-danger">
+                    <p *ngIf="forma.controls['referencias'].controls[i].controls['apel1'].errors.required " class="text-danger form-control-feedback">
+                      Primer Apellido es requerido
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row form-group">
+                <div class="col-md-3">
+                  <label for="inputrefape2">Segundo apellido</label>
+                </div>
+                <div class="col-md-6">
+                  <input type="text" maxlength="20" class="form-control" id="inputrefape2" formControlName="apel2">
+                </div>
+              </div>
+
+              <br>
+              <fieldset>
+                <legend style="margin-left:2%;">Telefonos:
+                </legend>
+
+
+
+
+                <div formArrayName="telefonos">
+                  <div class="row form-group" *ngFor="let control of forma.controls['referencias'].controls[i].controls['telefonos'].controls; let j=index" formGroupName={{j}}>
+                    <div class="col-md-4">
+                      <label>Telefono </label>
+                    </div>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" maxlength="10" formControlName="telefono">
+                      <div *ngIf="forma.controls['referencias'].controls[i].controls['telefonos'].controls[j].controls['telefono'].invalid " class="form-control-feedback text-danger">
+                        <p *ngIf="forma.controls['referencias'].controls[i].controls['telefonos'].controls[j].controls['telefono'].errors.required " class="text-danger form-control-feedback">
+                          Telefono es requerido
+                        </p>
+
+
+                        <p class="text-danger form-control-feedback" *ngIf="forma.controls['referencias'].controls[i].controls['telefonos'].controls[j].controls['telefono'].errors.pattern ">
+                          Se requiere 10 digitos.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <label>Tipo de telefono </label>
+                    </div>
+                    <div class="col-md-8">
+                      <select class="custom-select custom-select-lg mb-1 " style="height:50px;" formControlName='telTipo'>
+                        <option selected></option>
+                        <option value="Fijo">Fijo </option>
+                        <option value="Celular">Celular </option>
+                      </select>
+                      <div *ngIf="forma.controls['referencias'].controls[i].controls['telefonos'].controls[j].controls['telTipo'].invalid " class="form-control-feedback text-danger">
+                        <p *ngIf="forma.controls['referencias'].controls[i].controls['telefonos'].controls[j].controls['telTipo'].errors.required " class="text-danger form-control-feedback">
+                          Tipo de telefono es requerido
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+
+              <br><br>
+            </fieldset>
+          </div>
+        </div>
+        <div *ngIf="tabs[6]" align="center">
+
+          <fieldset>
+            <legend style="margin-left:2%;">Dependientes Economicos:
+            </legend>
+
+            <div formArrayName="dependientesEconomicos">
+              <div *ngFor="let control of forma.controls['dependientesEconomicos'].controls; let i=index" formGroupName={{i}}>
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label>Nombre: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" class="form-control" maxlength="255" [class.is-invalid]="forma.controls['dependientesEconomicos'].controls[i].controls['nombre'].invalid " formControlName="nombre">
+
+                    <div *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['nombre'].invalid">
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['nombre'].errors.required ">
+                        Nombre es requerido
+                      </small>
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['nombre'].errors.pattern ">
+                        Solo se aceptan de 2 a 3 digitos.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label>Parentesco: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="255" class="form-control" formControlName="parentesco">
+                    <div *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['parentesco'].invalid">
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['parentesco'].errors.required ">
+                        Parentesco es requerido
+                      </small>
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['parentesco'].errors.pattern ">
+                        Solo se aceptan 7 digitos.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label>Edad: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" formControlName="edad">
+                    <div *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['edad'].invalid">
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['edad'].errors.required ">
+                        Edad es requerida
+                      </small>
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['edad'].errors.pattern ">
+                        Solo se aceptan 7 digitos.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label>Ocupacion: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="255" class="form-control" formControlName="ocupacion">
+                    <div *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['ocupacion'].invalid">
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['ocupacion'].errors.required ">
+                        Ocupacion es requerida
+                      </small>
+                      <small class="text-danger form-control-feedback" *ngIf="forma.controls['dependientesEconomicos'].controls[i].controls['ocupacion'].errors.pattern ">
+                        Solo se aceptan 7 digitos.
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <button type="button" (click)="popDependienteEcon(i)" class="btn btn-sm btn-danger ">
+                  Borrar Dependiente Economico
+                </button>
+
+              </div>
+            </div>
+            <br>
+            <div style="float:right;">
+              <button type="button" class="btn btn-sm btn-info" name="button" (click)="addDependienteEcon()">
+                Agregar Dependiente Economico
+              </button>
+            </div>
+            <br>
+            <br>
+            <br>
+          </fieldset>
+
+
+          <div>
+            <fieldset>
+              <legend style="margin-left:2%;">Conocimiento del cliente:
+
+              </legend>
+
+              <div class=" form-group" *ngFor="let control of forma.controls['conyuge'].controls; let i=index" formGroupName='conocimiento_cliente'>
+                <br>
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio1" formControlName="residencia_extranjero">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio1">¿Tiene lugar de residencia en el extranjero?</label>
+                </div>
+
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio2" formControlName="propietario_real">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio2">¿Actúa como apoderado de otra persona? </label>
+                </div>
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio3" formControlName="negocio_propio">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio3">¿El negocio del acreditado es propio?</label>
+                </div>
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio4" formControlName="pep">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio4">¿Es una Persona Políticamente Expuesta o
+                    alguno de sus integrantes lo es? </label>
+                </div>
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio5" formControlName="pb">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio5">¿Alguno de sus integrantes se encuentra en
+                    la lista de Terroristas de la CNBV? </label>
+                </div>
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio6" formControlName="pago7500">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio6">¿Su pago de crédito es mayor a 7,500
+                    dólares? </label>
+                </div>
+                <br>
+                <br>
+                <br>
+                <p><b>Los servicio que se pretenden realizar
+                    son:</b></p>
+                <br>
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio7" formControlName="credito">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio7">Créditos </label>
+                </div>
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio8" formControlName="fideicomiso">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio8">Fideicomisos </label>
+                </div>
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio10" formControlName="otro_servicio">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio10">Otros Servicios </label>
+                </div>
+
+                <br><br>
+                <!--
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label for="inputimpordist">Importe estimado de operaciones distintas a créditos (mensual): </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" id="inputimpordist" formControlName="pagos_distintas">
+                  </div>
+                </div>-->
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label for="inputfpago">Forma de pago</label>
+                  </div>
+                  <div class="col-md-6">
+                    <select class="custom-select custom-select-sm mb-3" id="inputfpago" formControlName="forma_pago">
+                      <option value="Transferencia">Transferencia</option>
+                      <option value="Cheque">Cheque</option>
+                      <option value="Efectivo">Efectivo</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['forma_pago'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['forma_pago'].errors.required " class="text-danger form-control-feedback">
+                        La forma de pago es requerida
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['forma_pago'].value=='Otro'">
+                  <div class="col-md-3">
+                    <label for="inputespecifique">Especifique la forma de pago: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="100" class="form-control" id="inputespecifique" formControlName="forma_pago_especificacion">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['forma_pago_especificacion'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['forma_pago_especificacion'].errors.required " class="text-danger form-control-feedback">
+                        La especificacion de la forma de pago es requerida
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+                <!--
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label for="inputimportcredito">Importe del crédito: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" id="inputimportcredito" formControlName="importe_credito">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['importe_credito'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['importe_credito'].errors.required " class="text-danger form-control-feedback">
+                        El importe es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>-->
+
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label for="inputcreddest">Destino del crédito: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="255" class="form-control" id="inputcreddest" formControlName="destino_credito">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['destino_credito'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['destino_credito'].errors.required " class="text-danger form-control-feedback">
+                        El destino del credito es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label for="inputnumimnuebles">Núm. de bienes inmuebles de su propiedad: </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" id="inputnumimnuebles" (input)="inmueblesChange($event)" formControlName="num_inmuebles">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['num_inmuebles'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['num_inmuebles'].errors.required " class="text-danger form-control-feedback">
+                        El numero de inmuebles es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group">
+                  <div class="col-md-3">
+                    <label for="inputvalorinmue">Valor estimado de inmuebles:
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" id="inputvalorinmue" formControlName="inmuebles_valor">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['inmuebles_valor'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['inmuebles_valor'].errors.required " class="text-danger form-control-feedback">
+                        El valor de los inmuebles es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio11" formControlName="tiene_auto">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio11">Cuenta con Auto </label>
+                </div>
+
+                <br><br>
+
+
+
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['tiene_auto'].value">
+                  <div class="col-md-3">
+                    <label for="inputmarca">Marca del auto:
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="100" class="form-control" id="inputmarca" formControlName="auto_marca">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['auto_marca'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['auto_marca'].errors.required " class="text-danger form-control-feedback">
+                        La marca del auto es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['tiene_auto'].value">
+                  <div class="col-md-3">
+                    <label for="inputmodelo">Modelo del auto:
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="100" class="form-control" id="inputmodelo" formControlName="auto_modelo">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['auto_modelo'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['auto_modelo'].errors.required " class="text-danger form-control-feedback">
+                        El modelo del auto es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['tiene_auto'].value">
+                  <div class="col-md-3">
+                    <label for="inputvalorauto">Valor estimado del auto:
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" id="inputvalorauto" formControlName="auto_valor">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['auto_valor'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['auto_valor'].errors.required " class="text-danger form-control-feedback">
+                        El valor del auto es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <br><br><br>
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio12" formControlName="familiar_funciones_publicas">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio12">¿ Usted o algún familiar suyo de hasta segundo grado de consanguinidad o afinidad (cónyuge, padre, madre, hijos, hermanos, abuelos, tíos,
+                    primos, cuñados, suegros, yernos, etc), desempeña o ha desempeñado funciones públicas destacadas en el Territorio Nacional o en el
+                    Extranjero (incluyendo puestos en Gobiernos Federales, Estatales, Municipales, funciones gubernamentales o judiciales, en partidos políticos,
+                    militares de alta jerarquía, altos ejecutivos de empresas paraestatales,etc ? </label>
+                </div>
+                <br><br>
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas'].value">
+                  <div class="col-md-3">
+                    <label for="inputquien">¿Quién (nombre)?
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="255" class="form-control" id="inputquien" formControlName="familiar_funciones_publicas_nombre">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas_nombre'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas_nombre'].errors.required " class="text-danger form-control-feedback">
+                        El nombre es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas'].value">
+                  <div class="col-md-3">
+                    <label for="inputparentesco">¿Parentesco?
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="100" class="form-control" id="inputparentesco" formControlName="familiar_funciones_publicas_parentesco">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas_parentesco'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas_parentesco'].errors.required " class="text-danger form-control-feedback">
+                        El parentesco es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="row form-group" *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas'].value">
+                  <div class="col-md-3">
+                    <label for="inputpuesto">¿Puesto?
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="100" class="form-control" id="inputpuesto" formControlName="familiar_funciones_publicas_puesto">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas_puesto'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['familiar_funciones_publicas_puesto'].errors.required " class="text-danger form-control-feedback">
+                        El puesto es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <br><br>
+
+                <div class="row col-md-12 form-check form-check-inline pl-4">
+                  <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio13" formControlName="por_cuenta_propia">
+                  <label class="form-check-label col-md-10 col-10" for="inlineRadio13">Declaro bajo protesta de decir verdad, que para efectos de la realización de las operaciones con la empresa estoy actuando porcuenta propia: </label>
+                </div>
+                <br><br>
+                <div class="row form-group" *ngIf="!forma.controls['conocimiento_cliente'].controls['por_cuenta_propia'].value">
+                  <div class="col-md-3">
+                    <label for="inputnomtercero">Nombre de tercero
+                    </label>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="text" maxlength="255" class="form-control" id="inputnomtercero" formControlName="nombre_tercero">
+                    <div *ngIf="forma.controls['conocimiento_cliente'].controls['nombre_tercero'].invalid " class="form-control-feedback text-danger">
+                      <p *ngIf="forma.controls['conocimiento_cliente'].controls['nombre_tercero'].errors.required " class="text-danger form-control-feedback">
+                        El nombre del tercero es requerido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </fieldset>
+          </div>
+
+
+        </div>
+        <div *ngIf="tabs[7]" align="center">
+          <fieldset *ngIf="forma.controls['estadoCivil'].value=='Casado/a'">
+            <legend style="margin-left:2%;">Conyuge:
+
+            </legend>
+            <div formArrayName="conyuge">
+              <div *ngFor="let control of forma.controls['conyuge'].controls; let i=index" formGroupName={{i}}>
+
+                <div class=" form-group">
+                  <label for="inputconyuge1">Primer nombre</label>
+                  <input type="text" maxlength="20" class="form-control" id="inputconyuge1" formControlName="nombre1">
+                  <div *ngIf="forma.controls['conyuge'].controls[0].controls['nombre1'].invalid ">
+                    <p *ngIf="forma.controls['conyuge'].controls[0].controls['nombre1'].errors.required " class="text-danger form-control-feedback">
+                      El primer nombre es requerido
+                    </p>
+                  </div>
+                </div>
+
+                <div class=" form-group">
+                  <label for="input2">Segundo nombre</label>
+                  <input type="text" maxlength="20" class="form-control" id="input2" formControlName="nombre2">
+                </div>
+
+                <div class=" form-group">
+                  <label for="input3">Primer apellido</label>
+                  <input type="text" maxlength="20" class="form-control" id="input3" formControlName="apel1">
+                  <div *ngIf="forma.controls['conyuge'].controls[0].controls['apel1'].invalid ">
+                    <p *ngIf="forma.controls['conyuge'].controls[0].controls['apel1'].errors.required " class="text-danger form-control-feedback">
+                      El primer Apellido es requerido
+                    </p>
+                  </div>
+                </div>
+
+                <div class=" form-group">
+                  <label for="inputconyapel2">Segundo apellido</label>
+
+                  <input type="text" maxlength="20" class="form-control" id="inputconyapel2" formControlName="apel2">
+
+                </div>
+                <div class=" form-group">
+                  <label for="input5">Edad</label>
+                  <input type="number" id="input5" class="form-control" formControlName="edad">
+                  <div *ngIf="forma.controls['conyuge'].controls[0].controls['edad'].invalid " class="form-control-feedback text-danger">
+                    <p *ngIf="forma.controls['conyuge'].controls[0].controls['edad'].errors.required " class="text-danger form-control-feedback">
+                      La edad es requerida
+                    </p>
+                  </div>
+                </div>
+                <br>
+                <fieldset>
+                  <legend style="margin-left:2%;">Telefonos:
+                  </legend>
+                  <div formArrayName="telefonos">
+                    <div class="row form-group" *ngFor="let control of forma.controls['conyuge'].controls[i].controls['telefonos'].controls; let j=index" formGroupName={{j}}>
+                      <div class="col-md-4">
+                        <label>Telefono {{j+1}}</label>
+                      </div>
+                      <div class="col-md-8">
+                        <input type="text" class="form-control" maxlength="10" formControlName="telefono">
+                        <div *ngIf="forma.controls['conyuge'].controls[i].controls['telefonos'].controls[j].controls['telefono'].invalid">
+                          <small class="text-danger form-control-feedback" *ngIf="forma.controls['conyuge'].controls[i].controls['telefonos'].controls[j].controls['telefono'].errors.required">
+                            Telefono es requerido
+                          </small>
+                          <small class="text-danger form-control-feedback" *ngIf="forma.controls['conyuge'].controls[i].controls['telefonos'].controls[j].controls['telefono'].errors.pattern">
+                            Se requiere 10 digitos.
+                          </small>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <label>Tipo de telefono {{j+1}}</label>
+                      </div>
+                      <div class="col-md-8">
+                        <select class="custom-select custom-select-lg mb-1 " style="height:50px;" formControlName='telTipo'>
+                          <option selected></option>
+                          <option value="Fijo">Fijo </option>
+                          <option value="Celular">Celular </option>
+                        </select>
+
+
+                        <div *ngIf="forma.controls['conyuge'].controls[i].controls['telefonos'].controls[j].controls['telTipo'].invalid">
+                          <small class="text-danger form-control-feedback" *ngIf="forma.controls['conyuge'].controls[i].controls['telefonos'].controls[j].controls['telTipo'].errors.required ">
+                            Tipo de telefono es requerido
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+
+
+
+
+                </fieldset>
+              </div>
+            </div>
+          </fieldset>
+          <br>
+          <br>
+          <br>
+
+          <div class="firmaFrame" style="  height:300px;">
+            <canvas #efirma style="  box-shadow: 0px 0px 15px 3px #ccc;"> </canvas>
+          </div>
+
+          <div *ngIf="!forma.controls['firma'].valid" class="alert alert-danger" role="alert">
+            La firma es requerida
+          </div>
+          <br>
+          <button type="button" #clearFirma>Borrar firma</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="  row">
+      <div class="col-md-3">
+        <div class="list-group" *ngIf="docDownload">
+
+          <a [href]="urlContrato" class="list-group-item list-group-item-action" target="_blank"> Descargar Contrato</a>
+          <a [href]="urlPagare" class="list-group-item list-group-item-action" target="_blank"> Descargar Pagare</a>
+        </div>
+      </div>
+
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center; " class="col-md-5">
+
+        <button class=" profile-edit-btn mt-2 mb-2 " type="button" name="btnAddMore" value="Finalizar" style="color:white;" *ngIf="forma.valid && !codeSent" (click)="validarTel()">Finalizar</button>
+        <br>
+        <span class="step" (click)="goToNavItem(0)" [ngClass]="{' active': tabs[0] === true }"></span>
+        <span class="step" (click)="goToNavItem(1)" [ngClass]="{' active': tabs[1] === true }"></span>
+        <span class="step" (click)="goToNavItem(2)" [ngClass]="{' active': tabs[2] === true }"></span>
+        <span class="step" (click)="goToNavItem(3)" [ngClass]="{' active': tabs[3] === true }"></span>
+        <span class="step" (click)="goToNavItem(4)" [ngClass]="{' active': tabs[4] === true }"></span>
+        <span class="step" (click)="goToNavItem(5)" [ngClass]="{' active': tabs[5] === true }"></span>
+        <span class="step" (click)="goToNavItem(6)" [ngClass]="{' active': tabs[6] === true }"></span>
+        <span class="step" (click)="goToNavItem(7)" [ngClass]="{' active': tabs[7] === true }"></span>
+
+      </div>
+      <div class="col-md-3" align="center">
+
+        <button class="col-md-6  profile-edit-btn mb-2 mt-2" type="button" id="prevBtn" (click)="nextPrev(-1)" *ngIf="prevBtn">Paso anterior</button>
+        <button class="col-md-6  profile-edit-btn" style="color:white;" type="button" id="nextBtn" (click)="nextPrev(1)" *ngIf="currentTab<7">Siguiente paso</button>
+        <!--  <input class=" profile-edit-btn" type="submit" name="btnAddMore" value="Guardar" *ngIf="currentTab==6" [disabled]="!forma.valid"/>
+             -->
+      </div>
+    </div>
+  </form>
+</div>

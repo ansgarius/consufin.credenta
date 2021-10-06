@@ -1,0 +1,88 @@
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f6f9fe;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding: 8px 20px;
+  margin: 0;
+  background:var(--color-green);
+  color: white;
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 50px;
+  font-family:BeaufortMediumItalic;
+}
+
+.section-title h3 {
+  margin: 15px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+    color: var(--color-gray);
+    font-family:BankGothicBT-Medium;
+}
+
+.section-title h3 span {
+  color: var(--color-green);
+  font-family:BankGothicBT-Medium;
+}
+
+.section-title p {
+  margin: 15px auto 0 auto;
+  font-weight: 600;
+}
+
+label{
+font-family:BeaufortMediumItalic;
+color:var(--color-green);
+
+font-size:16px; cursor:text; font-weight: 600;
+}
+
+.error-mesage{
+  font-family:BeaufortMediumItalic;
+}
+.recordatorio{
+  background: var(--color-green);
+  color: white;
+  font-family:BeaufortMediumItalic;
+}
+
+.resultado-titulo{
+color:var(--color-green);
+font-family:BeaufortMediumItalic;
+}
+.resultado-texto{
+color:var(--color-gray);
+
+font-family:BankGothicBT-Medium;
+}
+
+@media (min-width: 1024px) {
+  .section-title p {
+    width: 50%;
+  }
+}
+/*--------------------------------------------------------------------------------*/
+/*--------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------*/

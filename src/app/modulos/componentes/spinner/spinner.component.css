@@ -1,0 +1,172 @@
+
+.loader {
+  font-size: 5px;
+  margin: 5% auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+}
+
+h3{
+
+font-family:BankGothicBT-Medium;
+}
+@-webkit-keyframes load4 {
+
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em white, 2em -2em 0 0em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 0em black;
+  }
+
+  12.5% {
+    box-shadow: 0em -3em 0em 0em black, 2em -2em 0 0.2em black, 3em 0em 0 0em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  25% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 0em black, 3em 0em 0 0.2em black, 2em 2em 0 0em black, 0em 3em 0 -0.5em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 0em black, 2em 2em 0 0.2em black, 0em 3em 0 0em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  50% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 0em black, 0em 3em 0 0.2em black, -2em 2em 0 0em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 0em black, -2em 2em 0 0.2em black, -3em 0em 0 0em black, -2em -2em 0 -0.5em black;
+  }
+
+  75% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 0em black, -3em 0em 0 0.2em black, -2em -2em 0 0em black;
+  }
+
+  87.5% {
+    box-shadow: 0em -3em 0em 0em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 0em black, -3em 0em 0 0em black, -2em -2em 0 0.2em black;
+  }
+}
+
+@keyframes load4 {
+
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em black, 2em -2em 0 0em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 0em black;
+  }
+
+  12.5% {
+    box-shadow: 0em -3em 0em 0em black, 2em -2em 0 0.2em black, 3em 0em 0 0em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  25% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 0em black, 3em 0em 0 0.2em black, 2em 2em 0 0em black, 0em 3em 0 -0.5em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 0em black, 2em 2em 0 0.2em black, 0em 3em 0 0em black, -2em 2em 0 -0.5em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  50% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 0em black, 0em 3em 0 0.2em black, -2em 2em 0 0em black, -3em 0em 0 -0.5em black, -2em -2em 0 -0.5em black;
+  }
+
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 0em black, -2em 2em 0 0.2em black, -3em 0em 0 0em black, -2em -2em 0 -0.5em black;
+  }
+
+  75% {
+    box-shadow: 0em -3em 0em -0.5em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 0em black, -3em 0em 0 0.2em black, -2em -2em 0 0em black;
+  }
+
+  87.5% {
+    box-shadow: 0em -3em 0em 0em black, 2em -2em 0 -0.5em black, 3em 0em 0 -0.5em black, 2em 2em 0 -0.5em black, 0em 3em 0 -0.5em black, -2em 2em 0 0em black, -3em 0em 0 0em black, -2em -2em 0 0.2em black;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+  z-index:7000; /* Sit on top */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+/*  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s*/
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}

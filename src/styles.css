@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --color-green:  #1a5733 ;
+  --color-gray:  #3f3f3e;
+}
+@font-face {
+    font-family: "BankGothicBT-Medium";
+    src: local("BankGothicBT-Medium"), url(./assets/fonts/BankGothicBT-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "BeaufortMediumItalic";
+    src: local("BeaufortMediumItalic"), url(./assets/fonts/BeaufortMediumItalic.ttf) format("truetype");
+}

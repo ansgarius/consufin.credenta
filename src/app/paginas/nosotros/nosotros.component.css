@@ -1,0 +1,139 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.content {
+  background: var(--color-green);
+}
+
+
+
+/* small*/
+@media (max-width:576px) {
+  .content button {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    background: var(--color-green);
+    font-size: 25px;
+    border: 2px solid white;
+    border-radius: 19px;
+    padding: 3% 2%;
+  }
+
+  .boton {
+    height: 100vh;
+    padding-bottom: 0%;
+  }
+
+  .parrafo1 {
+    background: var(--color-green);
+    padding: 25% 10% 0% 10%;
+    ;
+    height: 35vh;
+  }
+
+  .parrafo2 {
+    background: var(--color-green);
+    padding: 12% 10% 0% 10%;
+    ;
+    height: 65vh;
+  }
+
+  .content p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 20px;
+    padding: 0% 16%;
+    ;
+  }
+
+  .content span {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 15px;
+  }
+}
+
+@media (min-width:576px) {
+  .content button {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    background: var(--color-green);
+    font-size: 25px;
+    border: 2px solid white;
+    border-radius: 19px;
+    padding: 3% 2%;
+  }
+
+  .boton {
+    height: 100vh;
+    padding-bottom: 0%;
+  }
+
+  .parrafo1 {
+    background: var(--color-green);
+    padding: 25% 10% 10% 20%;
+    ;
+    height: 30vh;
+  }
+
+  .parrafo2 {
+    background: var(--color-green);
+    padding: 12% 10% 10% 20%;
+    ;
+    height: 70vh;
+  }
+
+  .content p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 40px;
+    padding: 0% 16%;
+    ;
+  }
+
+  .content span {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 25px;
+  }
+}
+
+/* small*/
+@media (min-width:768px) {
+
+  .parrafo1 {
+    padding: 10% 10% 0% 10%;
+    height: 50vh;
+  }
+  .parrafo2 {
+    padding: 10% 10% 0% 10%;
+    height: 50vh;
+  }
+  .content p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 30px;
+  }
+  .content span {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 20px;
+  }
+
+  .content button {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    background: var(--color-green);
+    font-size: 25px;
+    border: 2px solid white;
+    border-radius: 19px;
+    padding: 3% 2%;
+  }
+
+  .boton {
+    height: 50vh;
+    padding-bottom: 0%;
+  }
+}

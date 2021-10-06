@@ -1,0 +1,113 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+/*----------------------------------------------------------------------------*/
+/*
+          *medias queries
+*/
+/*xsm*/
+@media (max-width:576px) {
+  .logo {
+    max-width: 200px;
+  }
+
+  .content p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 28px;
+  }
+
+  .content {
+    height: 100vh;
+    padding: 36% 0%;
+    background: var(--color-green);
+  }
+
+  .menu_abajo {
+    position: fixed;
+    top: 89%;
+    left: 0px;
+    background: white;
+  }
+
+  .menu_arriba {
+    position: fixed;
+    top: 0%;
+    left: 0px;
+    background: white;
+  }
+}
+
+/* small*/
+@media (min-width:576px) {
+
+
+  .logo {
+    max-width: 350px;
+  }
+
+  .content p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 48px;
+  }
+
+  .content {
+    height: 100vh;
+    padding: 20% 0%  0%  0%;
+    background: var(--color-green);
+  }
+
+  .menu_abajo {
+    position: fixed;
+    top: 93%;
+    left: 0px;
+    background: white;
+  }
+
+  .menu_arriba {
+    position: fixed;
+    top: 0%;
+    left: 0px;
+    background: white;
+  }
+}
+
+/*medium*/
+@media (min-width:768px) {
+  .logo {
+    max-width: 330px;
+  }
+
+  .content p {
+    font-family: BeaufortMediumItalic;
+    color: white;
+    font-size: 40px;
+  }
+
+  .content {
+    background: var(--color-green);
+    padding: 0% 0%  0%  0%;
+    height: 100vh;
+  }
+
+  .parrafo2{
+  padding: 23% 0%  0%  0%;
+
+  }
+
+  .menu_grande {
+    position: fixed;
+    top: 0%;
+    left: 0px;
+    background: white;
+  }
+}
+
+/*Large*/
+@media (min-width:992px) {}
+
+/*Extra large*/
+@media (min-width:1200px) {}
