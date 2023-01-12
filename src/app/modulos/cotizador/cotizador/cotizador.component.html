@@ -1,9 +1,9 @@
 <div class="container-fluid" style=" ">
   <div class="row">
-    <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12  col-12" style="padding-left:10%; font-size:14px; ">
+    <div class=" col-xl-6 col-lg-6 col-md-12 col-sm-12  col-12   " >
 
       <br>
-      <div class="section-title">
+      <div class="section-title ">
 
         <h2>¡Te damos la bienvenida!</h2>
         <h3>Realiza tu <span><b>Regístro</b> </span></h3>
@@ -14,13 +14,13 @@
           Por favor permitenos acceder a tu ubicacion.
         </div>
       </div>
-      <div class="modal-body" *ngIf="true">
+      <div class="modal-body " *ngIf="true">
         <form class="form-horizontal" [formGroup]="forma">
 
 
 
-          <div class="row form-group">
-            <div class="col-md-3">
+          <div class="row form-group ">
+            <div class="col-md-4">
               <label for="input1">Primer nombre</label>
             </div>
             <div class="col-md-6">
@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="input2">Segundo nombre</label>
             </div>
             <div class="col-md-6">
@@ -39,7 +39,7 @@
             </div>
           </div>
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="input3">Primer apellido</label>
             </div>
             <div class="col-md-6">
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="input4">Segundo apellido</label>
             </div>
             <div class="col-md-6">
@@ -59,7 +59,7 @@
           </div>
 
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="inputtpersona">Tipo de persona</label>
             </div>
             <div class="col-md-6">
@@ -81,16 +81,18 @@
 
 
               <div class="row form-group">
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label>Telefono </label>
                 </div>
                 <div class="col-md-6">
                   <input type="text" class="form-control" maxlength="10" formControlName="telefono">
                   <div *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].invalid">
-                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.required ">
+                    <small class="text-danger form-control-feedback"
+                      *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.required ">
                       Telefono es requerido
                     </small>
-                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.pattern ">
+                    <small class="text-danger form-control-feedback"
+                      *ngIf="forma.controls['telefonos'].controls[i].controls['telefono'].errors.pattern ">
                       Se requiere 10 digitos.
                     </small>
                   </div>
@@ -99,7 +101,7 @@
 
 
               <div class="row form-group">
-                <div class="col-md-3">
+                <div class="col-md-4">
                   <label>Tipo de telefono </label>
                 </div>
                 <div class="col-md-6">
@@ -110,7 +112,8 @@
                   </select>
 
                   <div *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].invalid">
-                    <small class="text-danger form-control-feedback" *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].errors.required ">
+                    <small class="text-danger form-control-feedback"
+                      *ngIf="forma.controls['telefonos'].controls[i].controls['telTipo'].errors.required ">
                       tipo de telefono es requerido
                     </small>
                   </div>
@@ -127,18 +130,23 @@
           <div formArrayName="mails">
 
 
-            <div class="row form-group" *ngFor="let control of forma.controls['mails'].controls; let i=index" formGroupName={{i}}>
-              <div class="col-md-3">
+            <div class="row form-group" *ngFor="let control of forma.controls['mails'].controls; let i=index"
+              formGroupName={{i}}>
+              <div class="col-md-4">
                 <label for="inputmail"> Mail:</label>
               </div>
               <div class="col-md-6">
 
-                <input type="email" maxlength="100" class="form-control " id="inputmail" [class.is-invalid]="forma.controls['mails'].controls[i].controls['mail'].invalid " formControlName="mail">
+                <input type="email" maxlength="100" class="form-control " id="inputmail"
+                  [class.is-invalid]="forma.controls['mails'].controls[i].controls['mail'].invalid "
+                  formControlName="mail">
                 <div *ngIf="forma.controls['mails'].controls[i].controls['mail'].invalid">
-                  <small class="text-danger form-control-feedback" *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.required">
+                  <small class="text-danger form-control-feedback"
+                    *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.required">
                     Mail es requerido
                   </small>
-                  <small class="text-danger form-control-feedback" *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.pattern ">
+                  <small class="text-danger form-control-feedback"
+                    *ngIf="forma.controls['mails'].controls[i].controls['mail'].errors.pattern ">
                     Formato incorrecto.
                   </small>
                 </div>
@@ -156,15 +164,27 @@
 
 
 
-
+          <div class="row form-group">
+            <div class="col-md-4">
+              <label for="pago">Cuanto puedes pagar?</label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" maxlength="9" class="form-control" id="pago" placeholder="0.00"
+                formControlName="pago"   (input)="cotizar($event)">
+              <div *ngIf="!forma.controls['pago'].valid" class="form-control-feedback text-danger">
+                Pago es requerido
+              </div>
+            </div>
+          </div>
 
 
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="cotizaMonto">Monto del Crédito:</label>
             </div>
             <div class="col-md-6">
-              <input type="number" maxlength="9" class="form-control" id="cotizaMonto" placeholder="0.00" formControlName="monto">
+              <input type="number" maxlength="9" class="form-control" id="cotizaMonto" placeholder="0.00"
+                formControlName="monto">
               <div *ngIf="!forma.controls['monto'].valid" class="form-control-feedback text-danger">
                 Monto es requerido
               </div>
@@ -172,8 +192,8 @@
           </div>
 
 
-          <div class="row form-group">
-            <div class="col-md-3">
+      <!---    <div class="row form-group">
+            <div class="col-md-4">
               <label for="cotizaPeriodo">Plazo: </label>
             </div>
             <div class="col-md-6">
@@ -182,6 +202,7 @@
                 <option value="12">12 meses</option>
                 <option value="18">18 meses</option>
                 <option value="24">24 meses</option>
+                <option value="60">60 meses</option>
               </select>
 
               <div *ngIf="forma.controls['plazo'].invalid">
@@ -193,7 +214,7 @@
           </div>
 
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="frecuencaPago">Frecuencia de pago: </label>
             </div>
             <div class="col-md-6">
@@ -204,20 +225,23 @@
               </select>
 
               <div *ngIf="forma.controls['frecuencaPago'].invalid">
-                <small class="text-danger form-control-feedback" *ngIf="forma.controls['frecuencaPago'].errors.required ">
+                <small class="text-danger form-control-feedback"
+                  *ngIf="forma.controls['frecuencaPago'].errors.required ">
                   El plazo es requerido
                 </small>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <div class="row col-md-12 form-check form-check-inline p-4">
-            <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio1" formControlName="garantia_hip">
-            <label class="form-check-label col-md-10 col-10" for="inlineRadio1" style="cursor:pointer;">¿Cuentas con garantía inmobiliaria?</label>
+            <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio1"
+              formControlName="garantia_hip">
+            <label class="form-check-label col-md-10 col-10" for="inlineRadio1" style="cursor:pointer;">¿Cuentas con
+              garantía inmobiliaria?</label>
           </div>
 
           <div class="row form-group">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="dest">Destino del credito</label>
             </div>
             <div class="col-md-6">
@@ -229,7 +253,7 @@
           </div>
 
 
-        <!--  <div class="row col-md-12 form-check form-check-inline p-4">
+          <!--  <div class="row col-md-12 form-check form-check-inline p-4">
             <input class="form-check-input col-md-1 col-1" type="checkbox" id="inlineRadio2" formControlName="politicas">
             <label class="form-check-label col-md-10 col-10" for="inlineRadio2" style="cursor:pointer;">
               He leído, comprendo y acepto los <a href="#">Terminós y Condiciones Generales</a> y el
@@ -242,11 +266,12 @@
 
 
           <div class="row form-group" *ngIf="showForm">
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label>Hemos enviado una Clave de verificación a tu celular favor de ingresarla</label>
             </div>
             <div class="col-md-6">
-              <input type="text" placeholder="Ingresé código de Verificación" formControlName="clave" class="form-control">
+              <input type="text" placeholder="Ingresé código de Verificación" formControlName="clave"
+                class="form-control">
               <div *ngIf="forma.controls['clave'].invalid">
                 <small class="text-danger form-control-feedback" *ngIf="forma.controls['clave'].errors.required ">
                   La clave de verificacion es requerida
@@ -266,12 +291,16 @@
 
 
           <div align="center">
-            <button type="button" class="btn btn-success   " style="cursor:pointer;  font-family:BeaufortMediumItalic;  " *ngIf="forma.valid && !codeSent" (click)="validarTel()">
+            <button type="button" class="btn btn-success   "
+              style="cursor:pointer;  font-family:BeaufortMediumItalic;  " *ngIf="forma.valid && !codeSent"
+              (click)="validarTel()">
               Registrarme
             </button>
 
             <!-- -->
-            <button type="button" class="btn btn-success   " style="cursor:pointer;  font-family:BeaufortMediumItalic;  " *ngIf="telCodeValidation===forma.controls['clave'].value && codeSent" (click)="store()">Finalizar</button>
+            <button type="button" class="btn btn-success   "
+              style="cursor:pointer;  font-family:BeaufortMediumItalic;  "
+              *ngIf="telCodeValidation===forma.controls['clave'].value && codeSent" (click)="store()">Finalizar</button>
             <br>
             <app-spinner *ngIf="cargando"></app-spinner>
             <!--  <br>

@@ -1,6 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../../servicios/api.service';
-import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  ApiService
+} from '../../../servicios/api.service';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormArray
+} from '@angular/forms';
 
 @Component({
   selector: 'app-cotizador',
@@ -8,6 +18,7 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
   styleUrls: ['./cotizador.component.css']
 })
 export class CotizadorComponent implements OnInit {
+  axiosSearch = null;
   cotizado = false;
   pago: any = 0;
   monto: any = 0;
@@ -28,9 +39,9 @@ export class CotizadorComponent implements OnInit {
   tabla = null;
   telCodeValidation: string = "";
   codeSent = false;
-showForm = false;
-success=false;
-mensajeExito=null;
+  showForm = false;
+  success = false;
+  mensajeExito = null;
   /**
    *Almacena los datos del formulario de la solicitud.
    */
@@ -42,14 +53,15 @@ mensajeExito=null;
       'latitud': new FormControl('', [Validators.required]),
       'garantia_hip': new FormControl(false, [Validators.required]),
       'politicas': new FormControl(false, [Validators.required]),
-      'credito_destino': new FormControl('', [Validators.required,Validators.maxLength(255)]),
+      'credito_destino': new FormControl('', [Validators.required, Validators.maxLength(255)]),
       'Nombre1': new FormControl('', [Validators.required]),
       'Nombre2': new FormControl(''),
       'Apel1': new FormControl('', [Validators.required]),
       'Apel2': new FormControl(''),
       'Tpersona': new FormControl('fisica', [Validators.required]),
       'monto': new FormControl("", [Validators.required]),
-      'plazo': new FormControl(6, [Validators.required]),
+      'pago': new FormControl(""),
+      'plazo': new FormControl(60, [Validators.required]),
       'frecuencaPago': new FormControl('mensual', [Validators.required]),
       'telefonos': new FormArray([
         new FormGroup({
@@ -64,11 +76,10 @@ mensajeExito=null;
       ]),
     });
 
-        this.getLocation();
+    this.getLocation();
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   /*cotizacionPrestamo(x) {
     this.cotizarHabilitado = true;
@@ -107,29 +118,53 @@ mensajeExito=null;
   }*/
 
 
-    store() {
-      console.log(this.forma.value);
-      this.cargando = true;
-      this.error = false;
-      this.errorMensaje = ""
-      this.success = false;
-      this.api.credentaStore(this.forma.value).subscribe(res => {
-        this.cargando = false;
-        this.success = true;
+  cotizar(x) {
+
+
+    clearTimeout(this.axiosSearch);
+    this.axiosSearch = setTimeout(() => {
+      //  console.log(this.forma.controls['pago'].value);
+
+      this.api.PreValidarCredito(this.forma.value).subscribe(res => {
+        
+        this.forma.controls['monto'].setValue(res['monto']);
+      }, (error) => {
+        //console.log(error.error);
+      //  this.error = true;
+       // this.errorMensaje = error.error //Object.values(JSON.parse(error.error));
+
+        //    window.scroll(0, 0);
+      });
+
+
+    }, 500);
+
+  }
+
+
+  store() {
+    console.log(this.forma.value);
+    this.cargando = true;
+    this.error = false;
+    this.errorMensaje = ""
+    this.success = false;
+    this.api.credentaStore(this.forma.value).subscribe(res => {
+      this.cargando = false;
+      this.success = true;
       /*
         this.docDownload = true;
         */
-        this.mensajeExito = res;
+      this.mensajeExito = res;
       //  window.scroll(0, 0);
-      }, (error) => {
+    }, (error) => {
 
-        this.error = true;
-        this.cargando = false;
-        this.errorMensaje = error.error.errors //Object.values(JSON.parse(error.error));
+      this.error = true;
+      this.cargando = false;
+      this.errorMensaje = error.error.errors //Object.values(JSON.parse(error.error));
 
-    //    window.scroll(0, 0);
-      });
-    }
+      //    window.scroll(0, 0);
+    });
+  }
   getLocation() {
     this.api.getPosition().then(pos => {
       this.forma.controls['latitud'].setValue(pos.lat);
@@ -139,8 +174,8 @@ mensajeExito=null;
 
   validarTel() {
 
-      //  this.showForm = true;
-      //this.telCodeValidation="1234abcd";
+    //  this.showForm = true;
+    //this.telCodeValidation="1234abcd";
     this.cargando = true;
 
     this.api.sendSms(this.forma.controls['telefonos'].value[0].telefono).subscribe((res) => {
@@ -148,9 +183,8 @@ mensajeExito=null;
       this.cargando = false;
       this.telCodeValidation = res;
       this.codeSent = true;
-    //  window.scroll(0, 0);
-    }, (err) => console.log(err)
-  );
+      //  window.scroll(0, 0);
+    }, (err) => console.log(err));
   }
 
   /*

@@ -9,12 +9,12 @@ import { Cat } from '../modelos/cat';
   providedIn: 'root'
 })
 export class ApiService {
-  host = "consufin.com.mx";
-//    host = "localhost";
+ // host = "consufin.com.mx";
+    host = "localhost";
   //  host = "192.168.1.65";
   baseRoute = "/cob2.0";
-  protocolo = "https://";
-  //protocolo = "http://";
+  //protocolo = "https://";
+  protocolo = "http://";
   constructor(private http: HttpClient) { }
 
 
@@ -32,6 +32,16 @@ export class ApiService {
   //Revisa la validez de codigos de PreAutorizacion
   credentaStore(x) {
     return this.http.post(this.protocolo + this.host + this.baseRoute + "/public/api/Credenta", x);//.map(res => { return res.json() });
+  }
+
+
+  PreValidarCredito(x) {
+
+    return this.http.post(this.protocolo + this.host + this.baseRoute + "/public/api/PreValidarCredito", {
+      pago:x.pago,
+      periodo:x.plazo,
+      frecuencaPago:x.frecuencaPago
+    });//.map(res => { return res.json() });
   }
   //Revisa la validez de codigos de PreAutorizacion
   validarCode(x) {
